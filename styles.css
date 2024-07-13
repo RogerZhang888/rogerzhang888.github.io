@@ -2801,12 +2801,20 @@ tbody.collapse.in{
     }
 }
 .navbar-nav{
+<<<<<<< HEAD
     margin:.25px -15px;
+=======
+    margin:.25px -15px
+>>>>>>> 66a521000974939c8f42f39d3fcd0aeec6476b6b
 }
 .navbar-nav>li>a{
     padding-top:10px;
     padding-bottom:10px;
+<<<<<<< HEAD
     line-height:19px;
+=======
+    line-height:19px
+>>>>>>> 66a521000974939c8f42f39d3fcd0aeec6476b6b
 }
 @media (max-width:767px){
     .navbar-nav .open .dropdown-menu{
@@ -2816,7 +2824,11 @@ tbody.collapse.in{
         margin-top:0;
         background-color:transparent;
         border:0;
+<<<<<<< HEAD
         box-shadow:none;
+=======
+        box-shadow:none
+>>>>>>> 66a521000974939c8f42f39d3fcd0aeec6476b6b
     }
     .navbar-nav .open .dropdown-menu .dropdown-header,.navbar-nav .open .dropdown-menu>li>a{
         padding:5px 15px 5px 25px
@@ -3050,7 +3062,11 @@ tbody.collapse.in{
     background-color:transparent
 }
 .navbar-inverse .navbar-nav>li>a,.navbar-inverse .navbar-text{
+<<<<<<< HEAD
     color:black
+=======
+    color:#888
+>>>>>>> 66a521000974939c8f42f39d3fcd0aeec6476b6b
 }
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:focus,.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover{
     color:black
