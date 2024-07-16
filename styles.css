@@ -2962,7 +2962,7 @@ tbody.collapse.in{
     }
 }
 .navbar-default{
-    background-color:#fff;
+    background-color:transparent;
     border-color:transparent
 }
 .navbar-default .navbar-brand{
@@ -3910,16 +3910,7 @@ p{
 .h2:after,h2:after{
     right:0
 }
-/* @media (min-width:992px){
-    .h2,h2{
-        padding:0 30px
-    }
-}
-@media (max-width:992px){
-    .h2:after,.h2:before,h2:after,h2:before{
-        display:none
-    }
-} */
+
 .h1,.h2,.h3,h1,h2,h3{
     margin-bottom:20px
 }
@@ -4082,10 +4073,10 @@ textarea{
     right:10px;
     top:10px;
     z-index:10;
-    background-color:#fff
+    background-color:transparent
 }
 .navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover,.navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover{
-    background-color:#fff
+    background-color:transparent
 }
 
 .navbar-inverse .navbar-toggle,.navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover{
@@ -4117,7 +4108,7 @@ textarea{
     border-right:none
 }
 .navbar-default .navbar-toggle,.navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover{
-    background-color:white;
+    background-color:transparent
 }
 @media (max-width:767px){
     .navbar-inverse{
@@ -4516,5 +4507,17 @@ iframe {
 }
 
 @media (min-width: 767px) {
-    .navbar
+    .navbar-nav li a {
+        color: #000 !important;
+    }
+
+    .navbar-inverse .nav {
+        background-color: rgba(255, 255, 255, 0.6);
+        padding: 10px !important;
+    }
+
+    .navbar-default .nav {
+        padding: 10px !important;
+        background-color: rgba(255, 255, 255, 0.6);
+    }
 }
