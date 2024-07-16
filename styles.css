@@ -2976,7 +2976,7 @@ tbody.collapse.in{
     color:#777
 }
 .navbar-default .navbar-nav>li>a{
-    color:#000
+    color: black;
 }
 .navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover{
     color:#333;
@@ -2997,7 +2997,7 @@ tbody.collapse.in{
     background-color:#ddd
 }
 .navbar-default .navbar-toggle .icon-bar{
-    background-color:#555
+    background-color:black
 }
 .navbar-default .navbar-collapse,.navbar-default .navbar-form{
     border-color:transparent
@@ -3008,7 +3008,7 @@ tbody.collapse.in{
 }
 @media (max-width:767px){
     .navbar-default .navbar-nav .open .dropdown-menu>li>a{
-        color:#000
+        color: white;
     }
     .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover{
         color:#333;
@@ -3050,7 +3050,7 @@ tbody.collapse.in{
     background-color:transparent
 }
 .navbar-inverse .navbar-nav>li>a,.navbar-inverse .navbar-text{
-    color:black
+    color:white;
 }
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:focus,.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:focus,.navbar-inverse .navbar-nav>li>a:hover{
     color:black
@@ -3084,7 +3084,7 @@ tbody.collapse.in{
         background-color:transparent
     }
     .navbar-inverse .navbar-nav .open .dropdown-menu>li>a{
-        color:#9d9d9d
+        color:#9d9d9d !important
     }
     .navbar-inverse .navbar-nav .open .dropdown-menu>.active>a,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>.active>a:hover,.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover{
         color:#fff;
@@ -4087,6 +4087,10 @@ textarea{
 .navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover,.navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover{
     background-color:#fff
 }
+
+.navbar-inverse .navbar-toggle,.navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover{
+    background-color:#000
+}
 @media (min-width:768px){
     .navbar-inverse .navbar-nav>li>a{
         border-right:1px solid #666
@@ -4095,9 +4099,7 @@ textarea{
 .navbar-inverse .navbar-nav>li:last-of-type a{
     border-right:none
 }
-.navbar-inverse .navbar-toggle,.navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-toggle:hover{
-    background-color:#000
-}
+
 .navbar-default .navbar-nav{
     border-bottom:1px solid #eee
 }
@@ -4115,20 +4117,20 @@ textarea{
     border-right:none
 }
 .navbar-default .navbar-toggle,.navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover{
-    background-color:#fff
+    background-color:white;
 }
 @media (max-width:767px){
     .navbar-inverse{
         background-color:transparent
     }
     .navbar-inverse .navbar-collapse{
-        background-color:#000
+        background-color:black;
     }
     .navbar-default{
         background-color:transparent
     }
     .navbar-default .navbar-collapse{
-        background-color:#fff
+        background-color: white;
     }
 }
 .nav>li>a{
@@ -4453,28 +4455,24 @@ iframe {
 
 .nav a{
     font-size: 16px !important;
-
 }
 
-.navbar {
-    background-color: rgba(255, 255, 255, 0.5);
-    width: 425px;
-}
 
 /*blog post content formatting*/
 
 .post-content{
-    margin: 200px 150px;
+    margin: 200px 10%;
 }
 
 .post-title{
     font-size: 40px;
     font-weight: 500;
     margin-bottom: 30px;
+    line-height: 1.4;
 }
 
 .post-date{
-    margin-bottom: 40px;
+    margin-bottom: 45px;
     font-weight: 500;
 }
 
@@ -4495,4 +4493,28 @@ iframe {
     background-position: center;
     background-attachment: scroll !important;
 
+}
+
+@media (max-width:767px){
+
+    .quote, .paragraph {
+        font-size: 12px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .post-date {
+        font-size: 12px;
+        line-height: 1.2;
+        margin-bottom: 30px;
+    }
+
+    .post-title {
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 767px) {
+    .navbar
 }
