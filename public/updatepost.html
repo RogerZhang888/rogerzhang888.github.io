@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Post</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Post</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+</head>
+<body>
+  <h1>Update Post</h1>
+  <form id="update-form">
+    <label for="id">Post ID:</label><br>
+    <input type="text" id="id" name="id"><br>
+    <label for="title">Title:</label><br>
+    <input type="text" id="title" name="title"><br>
+    <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date"><br>
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content"></textarea><br>
+    <input type="submit" value="Update">
+  </form>
+
+  <script>
+    // Initialize CKEditor
+    CKEDITOR.replace('content');
+    
+    document.getElementById('update-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      function convertDate(dateValue) {
+        if (!dateValue) {
+          console.error("No date value provided");
+          return "000000";  // Default value to avoid undefined errors
+        }
+        const [year, month, day] = dateValue.split('-');
+        if (!year || !month || !day) {
+          console.error("Invalid date format:", dateValue);
+          return "000000";
+        }
+        const shortYear = year.slice(-2);
+        const convertedDate = `${day}${month}${shortYear}`;
+        return convertedDate;
+      }
+
+      const id = document.getElementById('id').value;
+      const title = document.getElementById('title').value;
+      const dateValue = document.getElementById('date').value;
+      const date = convertDate(dateValue);
+      const content = CKEDITOR.instances.content.getData(); // Get data from CKEditor
+
+      console.log("Date value:", dateValue);
+      console.log("Converted date:", date);
+
+      fetch(`/api/posts/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title, date, content }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Post updated successfully');
+        console.log('Post added:', data);
+        // Optionally, redirect to the blog page or reset the form
+        CKEDITOR.instances.content.setData(''); // Clear CKEditor content
+      })
+      .catch(error => console.error('Error updating post:', error));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delete Post</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Post</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Delete Post</h1>
+  <form id="delete-form">
+    <label for="id">Post ID:</label><br>
+    <input type="text" id="id" name="id"><br>
+    <input type="submit" value="Delete">
+  </form>
+
+  <script>
+    document.getElementById('delete-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const id = document.getElementById('id').value;
+
+      fetch(`/api/posts/${id}`, {
+        method: 'DELETE',
+      })
+      .then(() => {
+        alert('Post deleted successfully');
+      })
+      .catch(error => console.error('Error deleting post:', error));
+    });
+  </script>
+</body>
+</html>

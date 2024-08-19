@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <title>Post</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-fixed-top navbar-default">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <div class="collapse navbar-collapse navigation" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a href="./index.html" title="">01 : Home</a></li>
+                        <li><a href="./resume.html" title="">02 : Resume</a></li>
+                        <li><a href="./blog.html" title="">03 : Blog</a></li>
+                    </ul>
+                </div> 
+            </div>
+        </nav>
+    </header>
+    <div class="section-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+            <div id="post-content">Oops! It looks like this post does not exist. Here's a cookie: 🍪</div>
+            <a class="back" href="blog.html">Back</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="footer-container text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>© 2024 Roger Zhang</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const params = new URLSearchParams(window.location.search);
+      const postId = params.get('id');
+      const postContent = document.getElementById('post-content');
+  
+      if (!postId) {
+        postContent.textContent = "No post ID provided.";
+        return;
+      }
+  
+      fetch(`/api/posts/${postId}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Post not found');
+          }
+          return response.json();
+        })
+        .then(post => {
+          postContent.innerHTML = `
+            <p class="post-title">${post.title}</p>
+            <div class="post-date">${post.date}</div>
+            <p class="post-content">${post.content}</p>
+          `;
+        })
+        .catch(error => {
+          console.error('Error fetching post:', error);
+          postContent.textContent = "Sorry, we couldn't load the post. Please try again later.";
+        });
+    });
+  </script>
+</body>
+</html>
+

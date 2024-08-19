@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <title>Blog</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-fixed-top navbar-default">
+        <div class="container">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse navigation" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="./index.html" title="">01 : Home</a></li>
+                    <li><a href="./resume.html" title="">02 : Resume</a></li>
+                    <li><a href="./blog.html" title="">03 : Blog</a></li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+</header>
+<div class="section-container">
+  <div class="container">
+      <div class="row">
+          <div class="col-xs-12">
+              <div class="template-example">
+                  <h1 class="page-title">Blog</h1>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="section-container">
+    <div class="container">
+        <div class="row resume-row-label">
+            <div class="col-xs-12">
+                <div class="template-example">
+                    <h2 class="template-title-example">Latest Posts</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container posts">
+        <!-- Posts will be dynamically inserted here -->
+    </div>
+</div>
+
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© 2024 Roger Zhang</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch('/api/posts')
+      .then(response => response.json())
+      .then(data => {
+        const postsContainer = document.querySelector('.container.posts');
+        postsContainer.innerHTML = data.map(post => `
+          <div class="post">
+            <a href="post.html?id=${post.id}">${post.title}</a>
+            <div class="date">${post.date}</div> <!-- Use the date directly without formatting -->
+          </div>
+        `).join('');
+      })
+      .catch(error => console.error('Error fetching posts:', error));
+  });
+</script>
+
+<script type="text/javascript" src="./main.js"></script></body>
+
+</body>
+</html>
