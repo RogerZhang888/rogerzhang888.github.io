@@ -4477,7 +4477,6 @@ iframe {
 }
 
 
-
 .background-image-container {
     height: 100vh;
     background-size: cover;
@@ -4520,4 +4519,23 @@ iframe {
         padding: 10px !important;
         background-color: rgba(255, 255, 255, 0.6);
     }
+}
+
+.resume-link{
+    margin-top: -100px;
+    margin-bottom: 50px;
+}
+
+.resume-link a{
+    text-decoration: none;
+    color: #8B0000;
+}
+
+.resume-link a:hover{
+    font-weight: bold;
+    transition: font-weight 0.3s, color 0.3s;
+}
+
+.decoration {
+    color: black;
 }
