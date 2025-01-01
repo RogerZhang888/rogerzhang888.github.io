@@ -4536,3 +4536,21 @@ iframe {
     transition: font-weight 0.3s, color 0.3s;
 }
 
+.photo {
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.image {
+    width: 500px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.caption {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+}
+
