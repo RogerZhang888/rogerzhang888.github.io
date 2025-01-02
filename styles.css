@@ -4489,19 +4489,28 @@ iframe {
 
     .quote, .paragraph {
         font-size: 12px;
-        line-height: 1.2;
+        line-height: 1.3;
         margin-bottom: 20px;
     }
 
     .post-date {
         font-size: 12px;
-        line-height: 1.2;
+        line-height: 1.3;
         margin-bottom: 30px;
     }
 
     .post-title {
         margin-bottom: 20px;
         font-size: 30px;
+    }
+
+    .image {
+        max-width: 300px;
+        margin: auto;
+    }
+
+    .caption {
+        font-size: 10px !important;
     }
 }
 
