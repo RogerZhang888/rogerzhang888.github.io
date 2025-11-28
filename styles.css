@@ -4452,7 +4452,7 @@ iframe {
 /*blog post content formatting*/
 
 .post-content{
-    margin: 200px 10%;
+    margin: 200px 20%;
 }
 
 .post-title{
@@ -4462,6 +4462,14 @@ iframe {
     line-height: 1.4;
 }
 
+.post-header {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+
 .post-date{
     margin-bottom: 45px;
     font-weight: 500;
@@ -4470,10 +4478,13 @@ iframe {
 .quote{
     font-style:italic;
     margin-bottom: 30px;
+    font-size: 16px;
 }
 
 .paragraph{
     margin-bottom: 30px;
+    font-size: 16px;
+    line-height: 2;
 }
 
 
@@ -4547,19 +4558,26 @@ iframe {
 
 .photo {
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .image {
-    width: 500px;
+    width: 800px;
     display: block;
     margin: auto;
     margin-bottom: 10px;
 }
 
 .caption {
+    margin-top: 20px;
     display: block;
     text-align: center;
-    font-size: 12px;
+    font-size: 16px;
 }
 
+@media (min-width: 2000px) {
+    .post-content{
+        margin: 200px auto;
+        width: 1000px;
+    }
+}
