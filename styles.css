@@ -2781,7 +2781,7 @@ tbody.collapse.in{
     background-color:transparent;
     background-image:none;
     border:1px solid transparent;
-    border-radius:0
+    border-radius:0;
 }
 .navbar-toggle:focus{
     outline:0
